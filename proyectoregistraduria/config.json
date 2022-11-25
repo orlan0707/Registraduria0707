@@ -1,0 +1,7 @@
+{
+  "url-backend": "127.0.0.1",
+  "port": 9999,
+
+  "data-db-conection": "mongodb+srv://orlandoizq0707:1234@registraduriaciclo4.sgs4ktl.mongodb.net/registraduriaciclo4?retryWrites=true&w=majority",
+  "name-db": "registraduriaciclo4"
+}
