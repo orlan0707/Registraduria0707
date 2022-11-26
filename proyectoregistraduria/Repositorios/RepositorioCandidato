@@ -1,5 +1,5 @@
 from Repositorios.InterfaceRepositorio import InterfaceRepositorio
-from Modelos.C
+from Modelos.Candidatos import Candidatos
 
-class (InterfaceRepositorio[]):
+class RepositorioCandidato(InterfaceRepositorio[Candidatos]):
     pass
