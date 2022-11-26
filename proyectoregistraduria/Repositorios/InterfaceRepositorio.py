@@ -33,6 +33,7 @@ class InterfaceRepositorio(Generic[T]):
         else:
             _id = laColeccion.insert_one(item.__dict__)
             elId = _id.inserted_id.__str__()
+
         x = laColeccion.find_one({"_id": ObjectId(elId)})
         x["_id"] = x["_id"].__str__()
         return self.findById(elId)

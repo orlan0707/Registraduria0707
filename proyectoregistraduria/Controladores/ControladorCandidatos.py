@@ -1,22 +1,23 @@
+from Modelos.Candidato import Candidato
 from Repositorios.RepositorioCandidato import RepositorioCandidato
-from Modelos.Candidatos import Candidatos
 class ControladorEstudiante():
     def __init__(self):
         self.repositorioCandidato = RepositorioCandidato()
     def index(self):
         return self.repositorioCandidato.findAll()
     def create(self,infoCandidatos):
-        nuevoCandidato=Candidatos(infoCandidatos)
+        nuevoCandidato=Candidato(infoCandidatos)
         return self.repositorioCandidato.save(nuevoCandidato)
     def show(self,id):
-        elCandidato=Candidatos(self.repositorioCandidato.findById(id))
+        elCandidato=Candidato(self.repositorioCandidato.findById(id))
         return elCandidato.__dict__
     def update(self,id,infoCandidatos):
-        candidatoActual = Candidatos(self.repositorioCandidato.findById(id))
+        candidatoActual = Candidato(self.RepositorioCandidato.findById(id))
         candidatoActual.cedula = infoCandidatos["cedula"]
+        candidatoActual.cedula = infoCandidatos["Numero Resolusion"]
         candidatoActual.nombre = infoCandidatos["nombre"]
         candidatoActual.apellido = infoCandidatos["apellido"]
-        return self.repositorioCandidato.save(candidatoActual)
+        return self.RepositorioCandidato.save(candidatoActual)
 
         def delete(self, id):
-            return self.repositorioCandidato.delete(id)
+            return self.RepositorioCandidato.delete(id)

@@ -1,4 +1,5 @@
 from Modelos.Partidos import Partidos
+from Repositorios.RepositorioPartidos import RepositorioPartidos
 class ControladorPartidos():
         def __init__(self):
             print("inicializar el controlador")
@@ -6,33 +7,34 @@ class ControladorPartidos():
 
         def index(self):
             print("listar todos los candidato")
-            unCandidato={
+            unPartido={
                 "_id": "123abs",
-                "Cedula": "1130667101",
-                "Nombre Candidato": "orlando",
-                "Partido Politico": "Democratico"
+                "Nombre": "Conservador",
+                "Lema": "la union hace la fuerza"
             }
-            return [unCandidato]
+            return [unPartido]
 
-        def create(self,infoCandidato):
-            print("crear un candidato")
-            elCandidato = Candidatos(infoCandidato)
-            return elCandidato.__dict__
+        def create(self,infoPartido):
+            print("crear un Partido")
+            elPartido = Partidos(infoPartido)
+            return elPartido.__dict__
 
         def show(self,id):
-            print("mostrar candidato")
-            elCandidato = {
+            print("mostrar Partido")
+            elPartido = {
                 "_id": id,
-                "Cedula": "1130667101",
-                "Nombre Candidato": "orlando",
-                "Partido Politico": "Democratico"
+                "Nombre": "Conservador",
+                "Lema": "la union hace la fuerza"
             }
-            return elCandidato
-        def update(self,id,infoCandidato):
-            print("Actualizando Candidato don id",id)
-            elCandidato = Candidatos(infoCandidato)
-            return elCandidato.__dict__
+            return elPartido
+        def update(self,id,infoPartido):
+            print("Actualizando Partido don id",id)
+            elPartido = Partidos(infoPartido)
+            elPartido.nombre = infoPartido["nombre"]
+            elPartido.lema = infoPartido["lema"]
+
+            return elPartido.__dict__
 
         def delete(self,id):
-            print("Eliminando Candidato",id)
+            print("Eliminando Partido",id)
             return {"delecte count":1}
